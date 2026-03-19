@@ -15,10 +15,11 @@ class Pet:
             exit()
 
     def show_status(self):
-        print (f"{self.name}'s status is:")
+        print (f"{self.name} ends the day with:")
         print (f"{self.happiness} happiness.")
         print (f"{self.money} bucks.")
         print (f"{self.hunger} hunger.")
+        exit()
 
     def make_unbalanced_moveset(self):
         self.happiness += 10
