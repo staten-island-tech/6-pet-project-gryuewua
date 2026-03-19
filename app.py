@@ -1,6 +1,7 @@
 class Pet:
-    def __init__(self, name):
+    def __init__(self, name, inventory):
         self.name = name
+        self.inventory = inventory
         self.happiness = 100
         self.money = 100
         self.hunger = 100
@@ -44,10 +45,8 @@ class Pet:
         self.happiness += 10 
         self.hunger += 25
         print (f"{self.name} ate a {food}")
-        
 
-
-Pboy = Pet("Pboy")
+Pboy = Pet("Pboy", ["PC"])
 Pboy.play("jjs")
 Pboy.make_unbalanced_moveset()
 Pboy.buy("racket", 30, 2)
