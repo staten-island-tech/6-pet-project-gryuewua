@@ -1,12 +1,16 @@
 class Pet:
-    def __init__(self, name, happiness, money):
+    def __init__(self, name):
         self.name = name
-        self.happiness = happiness
-        self.money = money
-    
+        self.happiness = 100
+        self.money = 100
+        self.hunger = 100
+        
     def play(self, activity):
         self.happiness += 10
+        self.hunger -= 10
         print (f"{self.name} is now playing {activity}.")
+        if self.hunger <= 0:
+            print(f"{self.name} starved to death.")
 
     def show_status(self):
         print (f"{self.name} now has {self.happiness} happiness.")
@@ -15,7 +19,10 @@ class Pet:
     def make_unbalanced_moveset(self):
         self.happiness += 10
         self.money += 10
+        self.hunger -+ 10
         print (f"{self.name} somehow made ten bucks after making an unbalanced moveset.")
+        if self.hunger <= 0:
+            print(f"{self.name} starved to death.")
     
     def buy(self, item, cost, amount):
         self.money -= cost*amount
@@ -27,11 +34,17 @@ class Pet:
         if self.money <= 0:
             self.happiness -= 50
             print (f"{self.name} went broke and cried himself to sleep.")
+
+    def feed(self, food):
+        self.happiness += 10 
+        self.hunger += 25
+        print (f"{self.name} ate a {food}")
         
 
 
-Pboy = Pet("Pboy", 50,100)
+Pboy = Pet("Pboy")
 Pboy.play("jjs")
 Pboy.make_unbalanced_moveset()
 Pboy.buy("racket", 30, 2)
+Pboy.feed("hotpot")
 Pboy.show_status()
