@@ -30,7 +30,7 @@ class Pet:
         
 
 
-Pboy = Pet("Pboy", 60,100)
+Pboy = Pet("Pboy", 50,100)
 Pboy.play("jjs")
 Pboy.make_unbalanced_moveset()
 Pboy.buy("racket", 30, 2)
