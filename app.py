@@ -11,10 +11,12 @@ class Pet:
         print (f"{self.name} is now playing {activity}.")
         if self.hunger <= 0:
             print(f"{self.name} starved to death.")
+            exit()
 
     def show_status(self):
         print (f"{self.name} now has {self.happiness} happiness.")
         print (f"{self.name} now has {self.money} bucks.")
+        print (f"{self.name} now has {self.hunger} hunger.")
 
     def make_unbalanced_moveset(self):
         self.happiness += 10
@@ -23,6 +25,7 @@ class Pet:
         print (f"{self.name} somehow made ten bucks after making an unbalanced moveset.")
         if self.hunger <= 0:
             print(f"{self.name} starved to death.")
+            exit()
     
     def buy(self, item, cost, amount):
         self.money -= cost*amount
@@ -34,6 +37,7 @@ class Pet:
         if self.money <= 0:
             self.happiness -= 50
             print (f"{self.name} went broke and cried himself to sleep.")
+            exit()
 
     def feed(self, food):
         self.happiness += 10 
