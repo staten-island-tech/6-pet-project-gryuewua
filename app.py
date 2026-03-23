@@ -8,27 +8,49 @@ class Pet:
         
     def play(self, activity):
         self.happiness += 10
-        self.hunger -= 10
+        self.hunger -= 15
         print (f"{self.name} is now playing {activity}.")
         if self.hunger <= 0:
             print(f"{self.name} starved to death.")
             exit()
 
-    def show_status(self):
+    def end_day(self):
         print (f"{self.name} ends the day with:")
         print (f"{self.happiness} happiness.")
         print (f"{self.money} bucks.")
         print (f"{self.hunger} hunger.")
-        exit()
+        self.Next = (input("Continue? "))
+        if self.Next == "Yes":
+            print (f"{self.name} wakes up on the next day.")
+        elif self.Next == "No":
+            exit()
+        
+
+    def show_status(self):
+        print (f"{self.name} has {self.happiness} happiness, {self.money} bucks, and {self.hunger} hunger.")
 
     def make_unbalanced_moveset(self):
         self.happiness += 10
         self.money += 10
-        self.hunger -+ 10
+        self.hunger -+ 20
         print (f"{self.name} somehow made ten bucks after making an unbalanced moveset.")
         if self.hunger <= 0:
             print(f"{self.name} starved to death.")
             exit()
+
+    def work(self):
+        self.happiness -= 30
+        self.money += 50
+        self.hunger -= 30
+        print (f"{self.name} dilly dallied at his job.")
+        if self.hunger <= 0:
+            print(f"{self.name} starved to death.")
+            exit()
+        if self.happiness <= 0:
+            print(f"{self.name} broke down in tears.")
+            exit()
+
+        
     
     def buy(self, item, cost, amount):
         self.money -= cost*amount
@@ -38,18 +60,27 @@ class Pet:
         elif amount == 1:
             print (f"{self.name} bought {amount} {item} for {total} bucks in total.")
         if self.money <= 0:
-            self.happiness -= 50
             print (f"{self.name} went broke and cried himself to sleep.")
             exit()
 
     def feed(self, food):
         self.happiness += 10 
         self.hunger += 25
-        print (f"{self.name} ate a {food}")
+        self.money -= 30
+        print (f"{self.name} ate {food}")
+        if self.money <= 0:
+            print (f"{self.name} went broke and cried himself to sleep.")
+            exit()
 
 Pboy = Pet("Pboy", ["PC"])
-Pboy.play("jjs")
+Pboy.work()
 Pboy.make_unbalanced_moveset()
-Pboy.buy("racket", 30, 2)
-Pboy.feed("hotpot")
+Pboy.feed("fried chicken")
+Pboy.work()
+Pboy.feed("fried chicken")
+Pboy.play("jjs")
+Pboy.play("badminton")
+Pboy.feed("fried chicken")
+Pboy.end_day()
+Pboy.buy("thing", 5, 5)
 Pboy.show_status()
