@@ -1,6 +1,7 @@
 class Pet:
     def __init__(self, name, inventory):
         self.name = name
+        inventory = []
         self.inventory = inventory
         self.happiness = 100
         self.money = 100
@@ -72,15 +73,11 @@ class Pet:
             print (f"{self.name} went broke and cried himself to sleep.")
             exit()
 
+    def backpack(self):
+        print(self.inventory)
+
 Pboy = Pet("Pboy", ["PC"])
-Pboy.work()
-Pboy.make_unbalanced_moveset()
-Pboy.feed("fried chicken")
-Pboy.work()
-Pboy.feed("fried chicken")
-Pboy.play("jjs")
-Pboy.play("badminton")
-Pboy.feed("fried chicken")
-Pboy.end_day()
+Pboy.backpack()
 Pboy.buy("thing", 5, 5)
+Pboy.backpack()
 Pboy.show_status()
