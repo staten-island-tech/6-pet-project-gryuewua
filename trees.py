@@ -4,26 +4,22 @@ def tree(heights):
     greaterf = 0
     lessf = 0
     for i in range(1,len(heights)):
-        if (heights)[i] < (heights)[i-1]:
+        if heights[i] > heights[i-1]:
             greater += 1
-            if less > lessf:
-                lessf = less
-            less = 0
-        elif (heights)[i] < (heights)[i-1]:
-            less += 1
-            if greater > greaterf:
-                greaterf = greater
-            greater = 0
         else:
             if greater > greaterf:
                 greaterf = greater
-            elif less > lessf:
+            greater = 1
+
+        if heights[i] < heights[i-1]:
+            less += 1
+            if less > lessf:
                 lessf = less
-            greater = 0
-            less = 0
+            less = 1
 
     print (greaterf)
     print (lessf)
 
-tree([1,3,4,2])
+tree([2,1,4,6,8,2,9,5,2,3])
+
 
