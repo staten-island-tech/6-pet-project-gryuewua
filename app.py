@@ -26,7 +26,6 @@ class Pet:
         elif self.Next == "No":
             exit()
         
-
     def show_status(self):
         print (f"{self.name} has {self.happiness} happiness, {self.money} bucks, and {self.hunger} hunger.")
 
@@ -51,8 +50,6 @@ class Pet:
             print(f"{self.name} broke down in tears.")
             exit()
 
-        
-    
     def buy(self, item, cost, amount):
         self.money -= cost*amount
         total = cost*amount
