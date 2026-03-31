@@ -21,6 +21,8 @@ def reciept(orders):
                 'price': order['price'],
                 'quantity': 1
             }
-    print(reciept)
+    for order, value in reciept.items():
+        price = value['price'] * value['quantity']
+        print(order,value['quantity'],price)
 
 reciept(sushi_orders)
