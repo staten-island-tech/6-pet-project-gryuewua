@@ -10,9 +10,7 @@ staff = {}
 for ward, value in wards.items():
     for v in value:
         if v in staff:
-            "hi"
+            staff[v].append(ward)
         else:
-            staff[v] = {
-                'ward': ward
-            }
+            staff[v] = [ward]
 print(staff)
