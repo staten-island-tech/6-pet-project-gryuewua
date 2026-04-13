@@ -1,7 +1,6 @@
 class Pet:
     def __init__(self, name, inventory):
         self.name = name
-        inventory = []
         self.inventory = inventory
         self.happiness = 100
         self.money = 100
@@ -53,6 +52,7 @@ class Pet:
     def buy(self, item, cost, amount):
         self.money -= cost*amount
         total = cost*amount
+        self.inventory.append(item)
         if amount > 1:
             print (f"{self.name} bought {amount} {item}s for {total} bucks in total.")
         elif amount == 1:
@@ -71,9 +71,11 @@ class Pet:
             exit()
 
     def backpack(self):
-        print(self.inventory)
+        for x, value in self.inventory.items():
+            amount = amount
+            print(self.inventory)
 
-Pboy = Pet("Pboy", ["PC"])
+Pboy = Pet("Pboy", [{"name": "Phone", "amount": "1"}])
 Pboy.backpack()
 Pboy.buy("thing", 5, 5)
 Pboy.backpack()
