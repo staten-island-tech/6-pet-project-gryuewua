@@ -71,11 +71,11 @@ class Pet:
             exit()
 
     def backpack(self):
-        for x, value in self.inventory:
-            print(self.inventory)
+        print(self.inventory)
 
-Pboy = Pet("Pboy", [{"name": "Phone", "amount": "1"}])
+Pboy = Pet("Pboy", ["PC"])
 Pboy.backpack()
+Pboy.show_status()
 Pboy.buy("thing", 5, 5)
 Pboy.backpack()
 Pboy.show_status()
